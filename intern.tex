@@ -1,5 +1,12 @@
 \documentclass{article} % For LaTeX2e
-\usepackage{intern,times}
+\usepackage{intern}
+% Remove times package as it conflicts with other font packages
+% \usepackage{times}  
+
+% Use Computer Modern (classic LaTeX font) instead of Palatino
+% \usepackage{mathpazo}
+\usepackage{microtype}   % Keep microtype for better typography
+\linespread{1.10}        % Slightly increase line spacing for better readability
 
 % Optional math commands from https://github.com/goodfeli/dlbook_notation.
 \input{math_commands.tex}
@@ -9,11 +16,16 @@
 \usepackage{subfigure}
 \usepackage{wrapfig}
 \usepackage{amsmath,amsthm} % Load amsthm with amsmath
-\usepackage{txfonts}
 \usepackage{amssymb,amsfonts} %ams symbols after amsthm
 \usepackage{enumerate,tikz,graphicx,mathrsfs,eucal,verbatim, bbm}
 % \usepackage{enumerate,tikz,graphicx,mathrsfs,eucal,verbatim, bbm, derivative} % Keep derivative here if installed, otherwise remove it.
 % \usepackage[ruled,vlined]{algorithm2e}
+
+% Optional: adjust paragraph spacing
+\setlength{\parskip}{0.5ex plus 0.3ex minus 0.2ex}
+
+% Optional: adjust margins if needed
+\usepackage[margin=1in]{geometry}
 
 \theoremstyle{definition}
 \newtheorem{defn}{Definition}[section]
