@@ -10,7 +10,6 @@ Since the publication of RT-1 \cite{RT-1} the robotics research is undergoing a 
     \label{fig:mesh}
 \end{wrapfigure}
 
-
 Robotics foundational models, often referred to as Vision-Language-Action (VLA) models, is the name of the policies emerging from this paradigm shift. This nomenclature reflects their modality inputs, vision and language, and outputs, action. Leveraging techniques such as Imitation Learning, Reinforcement Learning, and Self-Supervised Learning, these models have demonstrated remarkable capabilities in dexterous manipulation across multiple tasks, offering a degree of generalization over robot embodiments and environments. A key enabler of this progress is the rise of large-scale pre-training which utilize vast datasets to construct general-purpose representations, applicable across diverse robotic settings, tasks, and embodiments \cite{TransferWelle}.
 
 
@@ -22,7 +21,7 @@ Due to their rapid success, the field lacks a standardized benchmarking literatu
 
 This project aims to deliver:
 
-    \begin{enumerate}[leftmargin=*]
+    \begin{enumerate}
         \item Benchmark suite to evaluate robotics foundational models against deformable object manipulation
         \item Evaluation protocol, applied to the selected policies 
         \item Summarization of the work in a paper
@@ -30,23 +29,23 @@ This project aims to deliver:
 
 
 \subsection{Specific Objectives:}
-    \subsubsection{Literature Review}
+    \textbf{Literature Review}
         Conduct a comprehensive review, including but not limited to:
         \begin{itemize}
             \item Existing robotics benchmarks, evaluation methodologies, and taxonomies focusing on deformable object manipulation.
             \item Robotics foundational models, emphasizing architectures, training data, and intended capabilities.
         \end{itemize}
-    \subsubsection{Benchmark Design}
+    \textbf{Benchmark Design}
         Propose a standardized benchmark suite that integrates and/or extends existing ones and an evaluation protocol. This includes defining clear metrics to provide multidimensional insights of the models' abilities beyond mere performance, such as:
         \begin{itemize}
-            \item \textbf{Generalization}: Formalize the variations across environments (ex: 1. RPL Laboratory 2. Simulation (GarmentLab, DaXBench, ...), tasks (ex: Cloth Folding, Rope knotting, Sponge ..., Liquid Pouring), and robot embodiments (..., SO-100). (FORMALIZE BETTER?)
-            \item \textbf{Data efficiency}: Specify how to measure performance across scaling the number of samples the policy consumes: zero-shot, few-shot performance. (FORMALIZE BETTER?)
-            \item (Stretch Goal) Context horizon: Expand the type of tasks taken into account to quantitatively investigate the horizon each model is able to sustain to solve a task: short-term versus long-term task performance. (FORMALIZE BETTER?)
-            \item (Stretch Goal) Explainable AI: usage of explainable AI methods such as probing \cite{Probing-VLA} to gain measures of understanding from the internal feature representations of the model. (FORMALIZE BETTER?)
+            \item \textit{Generalization}: Formalize the variations across environments (ex: 1. RPL Laboratory 2. Simulation (GarmentLab, DaXBench, ...), tasks (ex: Cloth Folding, Rope knotting, Sponge ..., Liquid Pouring), and robot embodiments (..., SO-100). (FORMALIZE BETTER?)
+            \item \textit{Data efficiency}: Specify how to measure performance across scaling the number of samples the policy consumes: zero-shot, few-shot performance. (FORMALIZE BETTER?)
+            \item (Stretch Goal) \textit{Context horizon}: Expand the type of tasks taken into account to quantitatively investigate the horizon each model is able to sustain to solve a task: short-term versus long-term task performance. (FORMALIZE BETTER?)
+            \item (Stretch Goal) \textit{Explainable AI}: usage of explainable AI methods such as probing \cite{Probing-VLA} to gain measures of understanding from the internal feature representations of the model. (FORMALIZE BETTER?)
         \end{itemize}
         % \item \textbf{Validation Strategy:} Outline a strategy for validating the proposed benchmark's relevance and effectiveness, potentially including correlating benchmark results with real-world robot performance or through expert evaluations to ensure the benchmark captures ``sense of reality'' (i.e., reflects real-world applicability).
 
-    \subsubsection{Evaluation}
+    \textbf{Evaluation}
         Implement the defined evaluation protocol and apply it to a selected set of publicly available foundation models, following the benchmark's recipe. A candidate list of the foundational models to test is:
         \begin{itemize}
             \item $\pi_0$, \cite{pi_zero}
