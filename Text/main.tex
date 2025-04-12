@@ -11,7 +11,8 @@ Since the publication of RT-1 \cite{RT-1} the robotics research is undergoing a 
     % https://docs.google.com/presentation/d/1F3-KIjQxwBtXfJAlc9_vwuBLSGuZqcXqZ7_GfxX5kYY/edit?usp=sharing
 \end{wrapfigure}
 
-Robotics foundational models, often referred to as Vision-Language-Action (VLA) models, is the name of the policies emerging from this paradigm shift (Figure \ref{fig:vla_abstraction}). This nomenclature reflects their modality inputs, vision and language, and outputs, action. Leveraging techniques such as Imitation Learning, Reinforcement Learning, and Self-Supervised Learning, these models have demonstrated remarkable capabilities in dexterous manipulation across multiple tasks, offering a degree of generalization over robot embodiments and environments. A key enabler of this progress is the rise of large-scale pre-training which utilize vast datasets to construct general-purpose representations, applicable across diverse robotic settings, tasks, and embodiments \cite{TransferWelle}.
+Robotics foundational models, often referred to as Vision-Language-Action (VLA) models, is the name of the policies emerging from this paradigm shift (Figure \ref{fig:vla_abstraction}). This nomenclature reflects their modality: vision and language for inputs while action as outputs. Leveraging techniques such as Imitation Learning and Reinforcement Learning, these models have demonstrated remarkable capabilities in dexterous manipulation across multiple tasks, offering a degree of generalization over robot embodiments and environments \cite{TransferWelle}. The key enabler of this progress is the usage of a pretrained vision language model for initialization of the model (or part of the model), and subsequently exploit a vast and variegated robotics dataset to train the Vision Language Action Model.
+
 
 
 \section{Goals and Objectives}
@@ -52,7 +53,7 @@ This project aims to deliver:
         \begin{itemize}
             \item $\pi_0$, \cite{pi_zero}
             \item OpenVLA, \cite{OpenVLA}
-            \item (Stretch Goal) Gr00t \cite{Gr00tN1}
+            \item (Stretch Goal) Gr00t N1 \cite{Gr00tN1}
             \item (Stretch Goal) Octo \cite{Octo}
         \end{itemize}
         
