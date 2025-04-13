@@ -29,7 +29,7 @@ This project aims to deliver:
 
 \subsection{Specific Objectives}
 
-To achieve the overall goal, the following specific objectives are defined:
+% To achieve the overall goal, the following specific objectives are defined:
 
 \subsubsection{Literature Review} % Using subsubsection for better structure
 Conduct a comprehensive review covering: existing robotics benchmarks, evaluation methodologies, and taxonomies, with a focus on deformable object manipulation and metrics used; Robotics foundation models (VLAs), detailing architectures, training data/recipes, and claimed capabilities relevant to manipulation.
@@ -58,17 +58,18 @@ Propose a standardized benchmark suite (DOM-Bench) and evaluation protocol. The 
         \end{itemize}
 \end{itemize}
 
-\paragraph{Stretch Goals:}
+\textit{Stretch Goals:} \newline
+
 \begin{itemize}
-    \item \textbf{Context Horizon Quantification:} Design specific long-horizon tasks (potentially extensions of Tier 3 tasks or dedicated scenarios) to quantitatively assess the effective context length a model can utilize for successful task completion. This involves evaluating performance degradation as task complexity and required memory increase.
-    \item \textbf{Explainable AI Integration:} Incorporate methods (e.g., representational probing \cite{Probing-VLA}, attention analysis) to gain insights into the models' internal representations and decision-making processes during DOM tasks. This aims to move beyond black-box evaluation towards understanding \textit{why} models succeed or fail.
-    \item \textbf{Further Tasks Expansion:} Include highly complex or nuanced tasks within the tiers (marked in Appendix \ref{app:task_suite}) that push the limits of current model capabilities (e.g., intricate knotting, delicate material handling, creative construction).
+    \item Context Horizon Quantification: Design specific long-horizon tasks (potentially extensions of Tier 3 tasks or dedicated scenarios) to quantitatively assess the effective context length a model can utilize for successful task completion. This involves evaluating performance degradation as task complexity and required memory increase.
+    \item Explainable AI Integration: Incorporate methods (e.g., representational probing \cite{Probing-VLA}, attention analysis) to gain insights into the models' internal representations and decision-making processes during DOM tasks. This aims to move beyond black-box evaluation towards understanding \textit{why} models succeed or fail.
+    \item Further Tasks Expansion: Include highly complex or nuanced tasks within the tiers (marked in Appendix \ref{app:task_suite}) that push the limits of current model capabilities (e.g., intricate knotting, delicate material handling, creative construction).
 \end{itemize}
 
-\paragraph{Protocol Definition:} Define a precise experimental protocol specifying setup, initial state randomization, number of trials, permissible interventions (if any), and data logging requirements. Reference Appendix \ref{app:task_suite} for detailed task specifications.
+% \paragraph{Protocol Definition:} Define a precise experimental protocol specifying setup, initial state randomization, number of trials, permissible interventions (if any), and data logging requirements. Reference Appendix \ref{app:task_suite} for detailed task specifications.
 
 \subsubsection{Evaluation \& Analysis}
-Implement the defined evaluation protocol using the DOM-Bench suite. Therefore, the first step is to apply the protocol to a core set of publicly available foundation models:
+Implement the defined evaluation protocol using the DOM-Bench suit. Therefore, the first step is to apply the protocol to a core set of publicly available foundation models:
 \begin{itemize}
     \item $\pi_0$ \cite{pi_zero}
     \item OpenVLA \cite{OpenVLA}
@@ -77,6 +78,8 @@ Implement the defined evaluation protocol using the DOM-Bench suite. Therefore, 
 And a posteriori, analyze the results based on the defined metrics, focusing on comparative performance across models, tiers, generalization axes, and data efficiency levels.
 
 \paragraph{Stretch Goals:}
+
+
 Evaluation expansion can be achieved by adding additional models:
     \begin{itemize}
         \item OpenVLA-OFT \cite{OpenVLA-OFT}
