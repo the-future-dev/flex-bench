@@ -1,4 +1,6 @@
 \documentclass{article} % For LaTeX2e
+
+\usepackage{appendix}
 \usepackage{intern}
 % Remove times package as it conflicts with other font packages
 % \usepackage{times}  
@@ -84,19 +86,19 @@
 \maketitle
 
 
-
-
+% --- Main ---
 \input{Text/main}
 
-
-
-
-
+% --- Bibliograpy ---
 \bibliography{intern}
 \bibliographystyle{plainnat}
 
-% \appendix
-% \section{Appendix}
-% You may include other additional sections here.
+
+% --- Appendix ---
+\appendix
+% \begin{appendices} % Start appendix environment
+\include{Text/appendix_tasks}
+% \end{appendices}
+
 
 \end{document}
