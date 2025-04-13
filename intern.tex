@@ -2,6 +2,7 @@
 
 \usepackage{appendix}
 \usepackage{intern}
+\usepackage{xcolor} % Ensure we have color support
 % Remove times package as it conflicts with other font packages
 % \usepackage{times}  
 
@@ -31,8 +32,9 @@
 
 \theoremstyle{definition}
 \newtheorem{defn}{Definition}[section]
+\setlength{\leftmargini}{15pt}
 
-\title{Benchmarking Foundation Models for Robotic Deformable Object Manipulation}
+\title{\centering Benchmarking Foundation Models\\for Robotic Deformable Object Manipulation}
 
 % Authors must not appear in the submitted version. They should be hidden
 % as long as the \iclrfinalcopy macro remains commented out below.
@@ -85,7 +87,6 @@
 
 \maketitle
 
-
 % --- Main ---
 \input{Text/main}
 
@@ -93,12 +94,10 @@
 \bibliography{intern}
 \bibliographystyle{plainnat}
 
-
 % --- Appendix ---
 \appendix
 % \begin{appendices} % Start appendix environment
 \include{Text/appendix_tasks}
 % \end{appendices}
-
 
 \end{document}

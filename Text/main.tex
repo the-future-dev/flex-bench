@@ -21,9 +21,9 @@ The primary objective of this project is to develop DOM-Bench: a standardized be
 
 This project aims to deliver:
 \begin{itemize}
-    \item \textbf{DOM-Bench Suite:} A well-defined set of deformable object manipulation tasks, environments, and metrics designed to evaluate robotics foundation models.
-    \item \textbf{Evaluation Protocol:} A clear procedure for applying the benchmark suite to different models, including specifications for data efficiency testing.
-    \item \textbf{Comparative Analysis \& Paper:} Implementation of the protocol on selected models, summarization of findings, and dissemination through a research paper.
+    \item DOM-Bench Suite: A well-defined set of deformable object manipulation tasks, environments, and metrics designed to evaluate robotics foundation models.
+    \item Evaluation Protocol: A clear procedure for applying the benchmark suite to different models, including specifications for data efficiency testing.
+    \item Comparative Analysis and Paper: Implementation of the protocol on selected models, summarization of findings, and dissemination through a research paper.
 \end{itemize}
 
 
@@ -39,19 +39,19 @@ Propose a standardized benchmark suite (DOM-Bench) and evaluation protocol. The 
 
 % \paragraph{Minimum Requirements:} % Using paragraph for logical grouping within subsubsection
 \begin{itemize}
-    \item \textbf{Multi-Tier Task Structure:} Define tasks across tiers of increasing complexity, each with their own measurable metrics, assessing different capabilities:
+    \item Multi-Tier Task Structure: Define tasks across tiers of increasing complexity, each with their own measurable metrics, assessing different capabilities:
         \begin{itemize}
             \item \textit{Tier 1 (Fundamentals):} Focus on evaluating core shape control and manipulation primitives using standardized objects and refined metrics.
             \item \textit{Tier 2 (Complex Interactions):} Focus on evaluating performance on tasks requiring more sophisticated interaction, multi-step execution, or tool use.
             \item \textit{Tier 3 (Foundation Model Evaluation):} Focus specifically on evaluating language understanding, reasoning, planning, and generalization capabilities inherent to foundation models when applied to DOM.
         \end{itemize}
-    \item \textbf{Generalization Assessment \cite{TransferWelle}:} Systematically evaluate model generalization across key axes:
+    \item Generalization Assessment \cite{TransferWelle}: Systematically evaluate model generalization across key axes:
         \begin{itemize}
             \item \textit{Environments:} Define evaluation in both simulation and real-world settings (RPL lab).
             \item \textit{Tasks:} Utilize the multi-tier structure described above. (See Appendix \ref{app:task_suite} for task details).
             \item \textit{Embodiments:} Define target robot embodiments for evaluation (Minimum: SO-100; Stretch: Others available at RPL). The protocol should allow for adaptation to different embodiments where feasible.
         \end{itemize}
-    \item \textbf{Data Efficiency Evaluation:} Quantify model performance relative to the amount of task-specific fine-tuning data.
+    \item Data Efficiency Evaluation: Quantify model performance relative to the amount of task-specific fine-tuning data.
         \begin{itemize}
             \item \textit{Zero-Shot Performance:} Evaluate capabilities directly using the pre-trained foundation model (0 examples).
             \item \textit{Few-Shot Performance:} Evaluate after fine-tuning on a small, standardized number of demonstrations (e.g., 10 examples, 30 examples).
