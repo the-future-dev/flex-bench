@@ -3,38 +3,68 @@
 \usepackage{appendix}
 \usepackage{intern}
 \usepackage{xcolor} % Ensure we have color support
-% Remove times package as it conflicts with other font packages
-% \usepackage{times}  
-
-% Use Computer Modern (classic LaTeX font) instead of Palatino
-% \usepackage{mathpazo}
-\usepackage{microtype}   % Keep microtype for better typography
+% Remove commented packages that aren't being used
+\usepackage{microtype}   % Better typography
 \linespread{1.10}        % Slightly increase line spacing for better readability
 
-% Optional math commands from https://github.com/goodfeli/dlbook_notation.
+% Add mdframed package for the domexample environment
+\usepackage{mdframed}
+
+% Define the domexample environment
+\newenvironment{domexample}{%
+  \begin{mdframed}[
+    linewidth=1pt,
+    linecolor=gray!50,
+    backgroundcolor=gray!5,
+    topline=true,
+    bottomline=true,
+    leftline=true,
+    rightline=true,
+    innertopmargin=10pt,
+    innerbottommargin=10pt,
+    innerrightmargin=10pt,
+    innerleftmargin=10pt
+  ]
+  \textbf{Example:}\\
+}{%
+  \end{mdframed}
+}
+
+% Math commands
 \input{math_commands.tex}
 
-\usepackage{hyperref}
+% Document structure packages - move hyperref to the end
 \usepackage{url}
 \usepackage{subfigure}
 \usepackage{wrapfig}
-\usepackage{amsmath,amsthm} % Load amsthm with amsmath
-\usepackage{amssymb,amsfonts} %ams symbols after amsthm
-\usepackage{enumerate,tikz,graphicx,mathrsfs,eucal,verbatim, bbm}
-% \usepackage{enumerate,tikz,graphicx,mathrsfs,eucal,verbatim, bbm, derivative} % Keep derivative here if installed, otherwise remove it.
-% \usepackage[ruled,vlined]{algorithm2e}
 
-% Optional: adjust paragraph spacing
+% Math packages (grouped together)
+\usepackage{amsthm} 
+\usepackage{amssymb}
+\usepackage{enumerate,tikz,graphicx,mathrsfs,eucal,verbatim,bbm}
+
+% Document formatting
 \setlength{\parskip}{0.5ex plus 0.3ex minus 0.2ex}
-
-% Optional: adjust margins if needed
 \usepackage[margin=1in]{geometry}
 
+% Load hyperref last to avoid conflicts
+\usepackage{hyperref}
+
+% Theorem environments
 \theoremstyle{definition}
 \newtheorem{defn}{Definition}[section]
 \setlength{\leftmargini}{15pt}
 
 \title{\centering Benchmarking Foundation Models\\for Robotic Deformable Object Manipulation}
+
+% Clean version of author details (uncomment for final version)
+% \author{Andrea Ritossa$^{1}$ \\\
+% $^{1}$Department of Robotics, Perception and Learning, KTH\\
+% \texttt{ritossa@kth.se}
+% }
+
+% The current setup has the author information in the intern.sty file
+% which is a cleaner approach for anonymous submissions
 
 % Authors must not appear in the submitted version. They should be hidden
 % as long as the \iclrfinalcopy macro remains commented out below.
@@ -68,18 +98,22 @@
 % puts 3 of 4 authors names on the first line, and the last on the second
 % line, try using \AND instead of \And before the third author name.
 
+% Editorial markup commands
 \newcommand{\fix}{\marginpar{FIX}}
 \newcommand{\new}{\marginpar{NEW}}
 
+% Color definitions for author notations
 \definecolor{orange}{RGB}{252, 130, 62}
 \definecolor{red}{RGB}{255, 0, 0}
 \definecolor{brown}{RGB}{155, 25, 10}
-\definecolor{blue}{RGB}{0, 0,255}
+\definecolor{blue}{RGB}{0, 0, 255}
 \definecolor{green}{RGB}{78, 196, 164}
-\newcommand{\al}{\color{blue}}
-\newcommand{\ar}{\color{cyan}}
-\newcommand{\ma}{\color{orange}}
-\newcommand{\red}{\color{red}}
+
+% Author notation commands
+% \newcommand{\al}{\color{blue}}       % Author 1 comments
+% \newcommand{\ar}{\color{cyan}}       % Author 2 comments
+% \newcommand{\ma}{\color{orange}}     % Author 3 comments
+% \newcommand{\red}{\color{red}}       % Important edits/remarks
 
 %\iclrfinalcopy % Uncomment for camera-ready version, but NOT for submission.
 \begin{document}
@@ -96,8 +130,8 @@
 
 % --- Appendix ---
 \appendix
-% \begin{appendices} % Start appendix environment
+\begin{appendices} % Use the proper appendices environment
 \include{Text/appendix_tasks}
-% \end{appendices}
+\end{appendices}
 
 \end{document}
