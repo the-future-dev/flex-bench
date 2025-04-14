@@ -1,69 +1,84 @@
 \section{DOM-Bench Task Suite Details}
 \label{app:task_suite} % Label for referencing
 
-This appendix provides specific examples of tasks within the DOM-Bench suite, categorized by tier. Each task contributes to evaluating the capabilities outlined in Section 2.2 (Benchmark Design).
+Brainstorming: This appendix provides a examples of tasks within the DOM-Bench suite.
 
 \subsection{Fundamentals}
+\label{app:task_suite_1}
 
-Tier 1 focuses on evaluating core shape control and manipulation primitives, serving as the foundation for more complex interactions. Tasks are primarily conducted in simulation environments such as SoftGym and DaXBench, allowing for consistent and controlled testing. Evaluation centers on basic manipulation success metrics, shape accuracy measurements, and efficiency of execution.
+Tier 1 focuses on evaluating core shape control and manipulation primitives, serving as the foundation for more complex interactions. Tasks are easily accessible in simulation 
+environments such as SoftGym and DaXBench, allowing for controlled testing.
+% Evaluation centers on basic manipulation success metrics, shape accuracy measurements, and efficiency of execution.
 
 \begin{table}[h]
 \centering
-\begin{tabular}{|p{3.5cm}|p{2cm}|p{8.5cm}|}
+\begin{tabular}{|p{3.5cm}|p{2cm}|p{2cm}|p{7.5cm}|}
 \hline
-\textbf{Task Name} & \textbf{Type} & \textbf{Description} \\
+\textbf{Task Name} & \textbf{Goal} & \textbf{Sim / Real} & \textbf{Description} \\
 \hline
-Cloth Fold (Single) & Minimum & Fold a square cloth along a central axis. \textit{Targets: Shape control. Metrics: Fold alignment error, final shape IoU.} \\
+Single Cloth Fold & Minimum & Sim & Fold a square cloth along a central axis. \textit{Targets: Shape control of a 2D Object. } \\ % Metrics: Fold alignment error, final shape IoU.
 \hline
-Cloth Spread & Minimum & Unfold a crumpled cloth to maximize coverage. \textit{Targets: Shape control. Metrics: Coverage area (\%), wrinkle score.} \\
+Rope Straighten & Minimum & Sim & Make a curved rope straight. \textit{Targets: Shape control of a 1D object.} \\ % Metrics: Final end-to-end distance / rope length ratio, curvature.
+\hline 
+Liquid Pour & Minimum & Sim & Pour a target volume between containers. \textit{Targets: Control of a viscous object.} \\ % Metrics: Volume accuracy, spillage amount.
+% \hline
+% Elastic Stretching (Simulated) & Minimum & Stretch a band to a target length. \textit{Targets: Shape control under tension. Metrics: Target length accuracy.} \\
+% \hline
+% Cloth Spread & Stretch & Sim & Unfold a crumpled cloth to maximize coverage. \textit{Targets: Shape control. Metrics: Coverage area (\%), wrinkle score.} \\
 \hline
-Rope Straighten & Minimum & Make a curved rope straight. \textit{Targets: Shape control. Metrics: Final end-to-end distance / rope length ratio, curvature.} \\
-\hline
-Liquid Pour (Simulated) & Minimum & Pour a target volume between containers. \textit{Targets: State control. Metrics: Volume accuracy, spillage amount.} \\
-\hline
-Elastic Stretching (Simulated) & Minimum & Stretch a band to a target length. \textit{Targets: Shape control under tension. Metrics: Target length accuracy.} \\
-\hline
-Sponge Compression (Simulated) & Stretch & Compress a block to target dimensions. \textit{Targets: Shape control under force. Metrics: Dimension accuracy.} \\
+Sponge Compression & Stretch  & Real & Compress a block to target dimensions. \textit{Targets: Shape control of a 3D object} \\ % Metrics: Dimension accuracy.
 \hline
 \end{tabular}
 \caption{Tier 1 Fundamental Tasks}
 \end{table}
 
 \subsection{Complex Interactions}
+\label{app:task_suite_2}
 
-Tier 2 advances to multi-step sequences, tool use, constrained motion, and basic object interactions, representing intermediate complexity in deformable object manipulation. These tasks are evaluated in both simulation (Garment Lab) and real-world settings (RPL Lab) to assess transferability. Evaluation emphasizes overall task completion, planning capabilities, interaction quality, and adherence to physical constraints.
+Tier 2 advances to multi-step sequences, tool use, constrained motion, and basic object interactions, representing intermediate complexity in deformable object manipulation. The tasks available in simulation are present in the Garment Lab suite while real-world settings will be assessed in the RPL Laboratory.
+% Evaluation emphasizes overall task completion, planning capabilities, interaction quality, and adherence to physical constraints.
 
 \begin{table}[h]
 \centering
-\begin{tabular}{|p{3.5cm}|p{2cm}|p{8.5cm}|}
+\begin{tabular}{|p{3.5cm}|p{2cm}|p{2cm}|p{7.5cm}|}
 \hline
-\textbf{Task Name} & \textbf{Type} & \textbf{Description} \\
+\textbf{Task Name} & \textbf{Goal} & \textbf{Sim / Real} & \textbf{Description} \\
 \hline
-Hang Clothes (Sim) & Minimum & Place a cloth item onto a hanger. \textit{Targets: Multi-step manipulation, object interaction. Metrics: Success rate, stability.} \\
+Hang Clothes & Minimum & Sim & Place a cloth item onto a hanger. \textit{Targets: Multi-step manipulation, object interaction.} \\
+% Metrics: Success rate, stability.
 \hline
-Wash in Sink (Sim) & Minimum & Simulate wiping/scrubbing an object in a sink area. \textit{Targets: Tool use (implicit sponge), coverage. Metrics: Coverage area, cycle consistency.} \\
+Wash in Sink & Minimum & Sim & Simulate wiping/scrubbing an object in a sink area. \textit{Targets: Tool use (implicit sponge), coverage.} \\
+% Metrics: Coverage area, cycle consistency.
 \hline
-Object Wrapping (Real) & Minimum & Wrap a simple rigid object (e.g., box) with paper/cloth. \textit{Targets: Multi-step manipulation, surface following. Metrics: Success rate, coverage quality, wrapping tightness (qualitative).} \\
+Knot Tying & Minimum & Real & Tie an overhand knot in a rope. \textit{Targets: Topological manipulation.} \\
+% Metrics: Success rate, knot correctness (topological check).
 \hline
-Knot Tying (Simple, Real) & Minimum & Tie an overhand knot in a rope. \textit{Targets: Topological manipulation. Metrics: Success rate, knot correctness (topological check).} \\
+Object Wrapping & Stretch & Real & Wrap a simple rigid object (e.g., box) with paper/cloth. \textit{Targets: Multi-step manipulation, surface following.} \\
+% Metrics: Success rate, coverage quality, wrapping tightness (qualitative).
 \hline
-WashWithSponge (Real) & Minimum & Use a sponge to wipe a designated area. \textit{Targets: Tool use, coverage. Metrics: Success rate, area coverage percentage.} \\
+WashWithSponge & Stretch & Real & Use a sponge to wipe a designated area. \textit{Targets: Tool use, coverage. Metrics: Success rate, area coverage percentage.} \\
 \hline
-Spreading Viscous Material (Real) & Minimum & Spread simulated paste/dough on a surface with a tool. \textit{Targets: Tool use, distribution control. Metrics: Success rate, coverage uniformity.} \\
+Spreading Viscous Material & Stretch & Real & Spread simulated paste/dough on a surface with a tool. \textit{Targets: Tool use, distribution control.} \\
+% Metrics: Success rate, coverage uniformity.
 \hline
-Knot Untying (Simple, Real) & Stretch & Untie a specific simple knot. \textit{Targets: Inverse manipulation, state recognition. Metrics: Success rate.} \\
+Knot Untying & Stretch & Real & Untie a specific simple knot. \textit{Targets: Inverse manipulation, state recognition.} \\
+% Metrics: Success rate.
 \hline
-Surgical Suturing (Simplified, Real) & Stretch & Pass a needle/thread through marked points on phantom skin. \textit{Targets: Fine manipulation, precision, tool use. Metrics: Success rate, point accuracy, stitch regularity.} \\
+Surgical Suturing & Stretch & Real & Pass a needle/thread through marked points on phantom skin. \textit{Targets: Fine manipulation, precision, tool use.} \\
+% Metrics: Success rate, point accuracy, stitch regularity.
 \hline
-Store In Closet (Sim) & Stretch & Fold a cloth item and place it in a designated shelf area. \textit{Targets: Long-horizon (implicit), combined skills. Metrics: Success rate, placement accuracy.} \\
+Store In Closet & Stretch & Sim & Fold a cloth item and place it in a designated shelf area. \textit{Targets: Long-horizon (implicit), combined skills.} \\
+% Metrics: Success rate, placement accuracy.
 \hline
 \end{tabular}
 \caption{Tier 2 Complex Interaction Tasks}
 \end{table}
 
 \subsection{Foundation Model Evaluation}
+\label{app:task_suite_3}
 
-Tier 3 specifically evaluates capabilities unique to foundation models, including language understanding, reasoning, planning, generalization, and adaptation. These tasks are primarily conducted in real-world settings at the RPL Lab to test true embodied intelligence. Evaluation measures instruction following fidelity, planning success across extended sequences, generalization capabilities to novel scenarios, and resolution of ambiguous instructions.
+Tier 3 specifically evaluates capabilities unique to foundation models, including language understanding, reasoning, planning, generalization, and adaptation. These tasks are primarily conducted in real-world settings at the RPL Lab to fill the missing literature of tasks within DOM simulators ad hoc for foundational models.
+% Evaluation measures instruction following fidelity, planning success across extended sequences, generalization capabilities to novel scenarios, and resolution of ambiguous instructions.
 
 \begin{table}[h]
 \centering
@@ -73,36 +88,47 @@ Tier 3 specifically evaluates capabilities unique to foundation models, includin
 \hline
 \multicolumn{3}{|c|}{\textbf{Language-Conditioned Tasks}} \\
 \hline
-Complex Placement & Minimum & "Place the folded blue napkin \textbf{directly on top of} the placemat, \textbf{aligned with the bottom edge}." \textit{Targets: Language (spatial, relational, attributes). Metrics: Constraint satisfaction accuracy.} \\
+Complex Placement & Stretch & "Place the folded blue napkin \textbf{directly on top of} the placemat, \textbf{aligned with the bottom edge}." \textit{Targets: Language (spatial, relational, attributes).} \\
+% Metrics: Constraint satisfaction accuracy.
 \hline
-Precise Action & Minimum & "Pour \textbf{exactly 50ml} of the liquid (use rice/beans for real-world safety) \textbf{slowly} into the \textbf{tallest} container." \textit{Targets: Language (quantity, parameters, attributes). Metrics: Parameter accuracy (volume, qualitative rate), target selection correctness.} \\
+Rice Pouring & Stretch & "Pour \textbf{exactly 50 grams} of the rice \textbf{slowly} into the \textbf{tallest} container." \textit{Targets: Language (quantity, parameters, attributes).} \\
+% Metrics: Parameter accuracy (volume, qualitative rate), target selection correctness.
 \hline
-Ordered Arrangement & Minimum & "Arrange the \textbf{three different colored} ropes \textbf{parallel} to each other, ordered \textbf{red, green, blue} from left to right." \textit{Targets: Language (multi-object, spatial, ordering). Metrics: Arrangement accuracy (parallelism, order).} \\
+Ordered Arrangement & Stretch & "Arrange the \textbf{three different colored} ropes \textbf{parallel} to each other, ordered \textbf{red, green, blue} from left to right." \textit{Targets: Language (multi-object, spatial, ordering).} \\
+% Metrics: Arrangement accuracy (parallelism, order).
 \hline
-Goal-Oriented Constraint & Minimum & "Fold the t-shirt \textbf{so the logo on the front is hidden}." \textit{Targets: Language (goal constraint), reasoning. Metrics: Goal satisfaction success rate.} \\
+Goal-Oriented Constraint & Stretch & "Fold the t-shirt \textbf{so the logo on the front is hidden}." \textit{Targets: Language (goal constraint), reasoning.} \\
+% Metrics: Goal satisfaction success rate.
 \hline
 \multicolumn{3}{|c|}{\textbf{Long-Horizon Planning Tasks}} \\
 \hline
-Laundry Prep & Minimum & "Prepare the laundry: \textbf{separate the whites from the colors} (use distinct cloth types), then \textbf{fold the towels} and \textbf{place the shirts} in the basket." \textit{Targets: Planning, sequencing, multi-skill execution. Metrics: Sub-goal completion, overall success rate.} \\
+Laundry Prep & Stretch & "Prepare the laundry: \textbf{separate the whites from the colors} (use distinct cloth types), then \textbf{fold the towels} and \textbf{place the shirts} in the basket." \textit{Targets: Planning, sequencing, multi-skill execution.} \\
+% Metrics: Sub-goal completion, overall success rate.
 \hline
-Packing & Minimum & "\textbf{Fold two shirts, one pair of pants, and three pairs of socks}, then \textbf{arrange them neatly} in the small suitcase." \textit{Targets: Planning, multi-object folding, spatial arrangement. Metrics: Success rate, packing density (qualitative), item integrity.} \\
+Packing & Stretch & "\textbf{Fold two shirts, one pair of pants, and three pairs of socks}, then \textbf{arrange them neatly} in the small suitcase." \textit{Targets: Planning, multi-object folding, spatial arrangement.} \\
+% Metrics: Success rate, packing density (qualitative), item integrity.
 \hline
-Bandage Prep & Minimum & "\textbf{Unroll the gauze}, \textbf{cut a 15cm strip} (robot indicates cut point, human assists/simulates cut if needed), and \textbf{fold it into a square pad}." \textit{Targets: Planning, tool interaction (simulated/assisted), sequencing. Metrics: Sub-goal completion, final state accuracy.} \\
+Bandage Prep & Stretch & "\textbf{Unroll the gauze}, \textbf{cut a 15cm strip} (robot indicates cut point, human assists/simulates cut if needed), and \textbf{fold it into a square pad}." \textit{Targets: Planning, tool interaction (simulated/assisted), sequencing.} \\
+% Metrics: Sub-goal completion, final state accuracy.
 \hline
-\multicolumn{3}{|c|}{\textbf{Generalization Tasks}} \\
+\multicolumn{3}{|c|}{\textbf{Vocabulary Generalization Tasks}} \\
 \hline
-Open-Vocabulary Object & Minimum & "Fold the \textbf{power cable}" (vs. trained ropes/cloth). \textit{Targets: Object generalization. Metrics: Success rate on unseen object categories.} \\
+Open-Vocabulary Object & Stretch & "Fold the \textbf{power cable}" (vs. trained ropes/cloth). \textit{Targets: Object generalization.} \\
+% Metrics: Success rate on unseen object categories.
 \hline
-Open-Vocabulary Action/Shape & Minimum & "Arrange the rope to form the \textbf{letter 'Q'}." or "Use the sponge to \textbf{wipe} the surface clean." \textit{Targets: Action/shape generalization. Metrics: Novel task success rate, qualitative shape/action match.} \\
+Open-Vocabulary Action/Shape & Stretch & "Arrange the rope to form the \textbf{letter 'Q'}." or "Use the sponge to \textbf{wipe} the surface clean." \textit{Targets: Action/shape generalization.} \\
+% Metrics: Novel task success rate, qualitative shape/action match.
 \hline
-Instruction Generalization & Minimum & "\textbf{Tidy up} the pile of clothes." (vs. explicit fold/stack commands). \textit{Targets: Instruction robustness. Metrics: Success rate with paraphrased/abstract instructions.} \\
+Instruction Generalization & Stretch & "\textbf{Tidy up} the pile of clothes." (vs. explicit fold/stack commands). \textit{Targets: Instruction robustness.} \\
+% Metrics: Success rate with paraphrased/abstract instructions.
 \hline
-Creative/Complex Shaping & Stretch & "Tie the two ropes together using a \textbf{bow knot}." or "Shape the play-doh into a \textbf{recognizable animal}." \textit{Targets: Advanced generalization, complex manipulation. Metrics: Qualitative assessment, knot/shape correctness.} \\
+Creative/Complex Shaping & Stretch & "Tie the two ropes together using a \textbf{bow knot}." or "Shape the play-doh into a \textbf{recognizable animal}." \textit{Targets: Advanced generalization, complex manipulation.} \\
+% Metrics: Qualitative assessment, knot/shape correctness.
 \hline
-Ambiguity Handling & Stretch & Give ambiguous command like "Prepare the rope." \textit{Targets: Reasoning, potential for clarification query. Metrics: Action plausibility, query generation rate (if applicable).} \\
-\hline
-Error Recovery (Prompted) & Stretch & Induce failure (e.g., drop object) and instruct: "You dropped it, pick it up and continue." \textit{Targets: Adaptation, planning repair. Metrics: Recovery success rate.} \\
-\hline
+% Ambiguity Handling & Stretch & Give ambiguous command like "Prepare the rope." \textit{Targets: Reasoning, potential for clarification query. Metrics: Action plausibility, query generation rate (if applicable).} \\
+% \hline
+% Error Recovery (Prompted) & Stretch & Induce failure (e.g., drop object) and instruct: "You dropped it, pick it up and continue." \textit{Targets: Adaptation, planning repair. Metrics: Recovery success rate.} \\
+% \hline
 \end{tabular}
 \caption{Tier 3 Foundation Model Evaluation Tasks}
 \end{table}
