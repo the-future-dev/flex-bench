@@ -1,6 +1,6 @@
 \section{Introduction}
 
-Since the publication of RT-1 \cite{RT-1}, the robotics research is undergoing a prolific period focused around foundation models. The central promise of this paradigm is the development of generalist policies that aim to achieve general-purpose embodied intelligence, capable of complex interactions within unstructured environments. This shift mirrors advancements in Machine Learning, particularly in Natural Language Processing and Computer Vision, where large pretrained models have demonstrated remarkable success.
+Since the publication of RT-1 \cite{RT-1}, the robotics research is undergoing a prolific period focused around foundation models \cite{FoundationalModels}. The central promise of this paradigm is the development of generalist policies that aim to achieve general-purpose embodied intelligence, capable of complex interactions within unstructured environments. This shift mirrors advancements in Machine Learning, particularly in Natural Language Processing and Computer Vision, where large pretrained models have demonstrated remarkable success.
 
 \begin{wrapfigure}{r}{0.5\textwidth}
     \vspace{-15pt}
@@ -21,8 +21,7 @@ usage of a pretrained vision language model for initialization of the model (or 
 exploits a vast and varied robotics dataset to train the Vision Language Action Model.
 
 \section{Goals and Objectives}
-Due to the rapid pace of development in robotics foundation models, the field currently lacks established, comprehensive comparison benchmarks,
-particularly for complex interaction scenarios like deformable object manipulation (DOM).
+Due to the rapid pace of development in robotics foundation models, the field currently lacks established, comprehensive comparison benchmarks for complex interaction scenarios like deformable object manipulation (DOM).
 This absence makes rigorous comparison between foundational models challenging, while simultaneously presenting an opportunity for standardization.
 Although some models like $\pi_0$ \cite{pi_zero} have demonstrated capabilities in specific DOM tasks (Shirt/Towel/Laundry Folding), a standardized evaluation suite is still missing.
 Such a suite is essential for equitable evaluation and deeper understanding of model capabilities across different manipulation scenarios.
@@ -34,7 +33,7 @@ This project aims to deliver:
 \begin{itemize}
     \item DOM-Bench Suite: A set of deformable object manipulation tasks, environments, and metrics designed to evaluate robotics foundation models.
     \item Evaluation Protocol and Implementation: Specify the procedure for applying the benchmark suite to different models, e.g: specifications for data efficiency testing and implement the protocol on selected models.
-    \item Paper: Summarization of findings, and dissemination through a research paper.
+    \item Summarization of the findings: write an accessible report of the results in the form of a workshop paper as a starting point for a potential publication.
 \end{itemize}
 
 
@@ -47,7 +46,7 @@ The first task is to conduct a comprehensive review covering: existing robotics 
 
 \subsubsection{Benchmark Design (DOM-Bench)}
 Following our review, we will propose DOM-Bench, a benchmark suite and evaluation protocol designed for evaluating robotics foundational models over Deformable Object Manipulation (DOM) tasks. The primary goal of DOM-Bench is to offer deeper insights into a model's capabilities, moving beyond simple task success rates.
-To achieve this, DOM-Bench will employ a multi-tier task structure. Tasks are organiyzed into tiers of increasing complexity, with each tier designed to evaluate distinct capabilities using specific, measurable metrics. (A detailed brainstorming of potential tasks can be found in Appendix~\ref{app:task_suite}).
+To achieve this, DOM-Bench will employ a multi-tier task structure. Tasks are organized into tiers of increasing complexity, with each tier designed to evaluate distinct capabilities using specific, measurable metrics. (A detailed brainstorming of potential tasks can be found in Appendix~\ref{app:task_suite}).
 % \begin{enumerate}
 %     \item \textit{Fundamentals}: the focus of the first tier is evaluating the shape control and manipulation primitives using classical objects. Classical examples can be Cloth Folding or Rope Straightening.	
 %     \item \textit{Complex Interactions}: the aim on this second type of tasks is to test the model capabilities on more sophisticated interaction, multi-step execution, or tool use. 
